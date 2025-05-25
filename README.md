@@ -7,7 +7,7 @@
 
 
 
-MultiTimeInMenuBar allows you to add clocks of your favorite cities across the world in your menu bar, along with the country flag. 
+MultiTimeInMenuBar allows you to add clocks of your favorite cities across the world in your menu bar, along with the country flag. This is a free to use, lightweight macOS application- from my MacBook I see roughly ~38 MB of memory usage.
 
 ## Download
 
