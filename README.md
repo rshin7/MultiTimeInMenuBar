@@ -12,7 +12,7 @@ MultiTimeInMenuBar allows you to add clocks of your favorite cities across the w
 ## Download
 
 ### Latest Release
-Download the latest version from the [Releases page](https://github.com/rshin/MultiTimeInMenuBar/releases/latest). The app is distributed as a signed and notarized DMG file.
+Download the latest version from the [Releases page](https://github.com/rshin7/MultiTimeInMenuBar/releases). The app is distributed as a signed and notarized DMG file.
 
 ### Installation
 1. Download the DMG file from the releases page
