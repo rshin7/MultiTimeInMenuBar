@@ -6,8 +6,6 @@ struct AboutView: View {
             Text("MultiTimeInMenuBar")
                 .font(.title2)
                 .bold()
-            Text("Version 1.0")
-                .font(.subheadline)
             Text("MultiTimeInMenuBar is a lightweight, free to use application that allows you to add additional clocks to your menu bar.")
                            .font(.footnote)
                            .multilineTextAlignment(.center)
