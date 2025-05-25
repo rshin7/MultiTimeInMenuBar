@@ -13,7 +13,7 @@ MultiTimeInMenuBar for macOS, a lightweight app to display multiple timezones wi
 
 - Display multiple timezone clocks in your menu bar
 - Add a prefix in addition to a flag
-- Display seconds, time in 24 hour format, and day difference. <img src="https://github.com/rshin7/MultiTimeInMenuBar/blob/main/.github/images/day-diff.png">  
+- Display seconds, time in 24 hour format, and day difference. <img src="https://github.com/rshin7/MultiTimeInMenuBar/blob/main/.github/images/day-diff.png" width="50" height="50">  
 
 ## Download
 
