@@ -7,7 +7,7 @@
 
 
 
-MultiTimeInMenuBar allows you to add clocks of your favorite cities across the world. 
+MultiTimeInMenuBar allows you to add clocks of your favorite cities across the world in your menu bar, along with the country flag. 
 
 ## Download
 
