@@ -13,7 +13,7 @@ MultiTimeInMenuBar for macOS, a lightweight app to display multiple timezones wi
 
 - Display multiple timezone clocks in your menu bar
 - Add a prefix in addition to a flag
-- Display seconds, time in 24 hour format, and day difference.
+- Display seconds, time in 24 hour format, and day difference. <img src="https://github.com/rshin7/MultiTimeInMenuBar/blob/main/.github/images/day-diff.png">  
 
 ## Download
 
@@ -31,4 +31,8 @@ Download the latest version from the [Releases page](https://github.com/rshin7/M
 
 
 ## Known Limitations
-macOS will hide items in the menu bar if you run out of screen space. If you lose your clock, you can find it back by temporarily removing some items from your Control Center menu bar by going to Settings > Control Center and setting temporarily setting some items to "Don't Show in Menu Bar". Then you can pick and choose what's important to you.
+1. macOS will hide items in the menu bar if you run out of screen space. If you lose your clock, you can find it back by temporarily removing some items from your Control Center menu bar by going to Settings > Control Center and temporarily setting some items to "Don't Show in Menu Bar". Then you can pick and choose what's important to you.
+
+2. There may be cities missing OR incorrect flags displayed for a city. Please feel free to submit a pull request to remedy this, or open an issue to which I'll get to when I can. 
+
+3. Regarding flags, I am using whatever flag represents the state as defined by Wikipedia. Should there be a case where an incorrect flag is displayed, it is not intentional and I'll be happy to correct it.
