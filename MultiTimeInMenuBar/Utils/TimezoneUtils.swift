@@ -5,12 +5,12 @@ struct TimezoneUtils {
     // Maps timezone IDs (e.g. "America/New_York") to ISO country codes (e.g. "us")
     static func countryCode(for timezoneID: String) -> String {
         let components = timezoneID.split(separator: "/")
-        guard components.count >= 2 else { return "us" }
-        let region = components[0].lowercased()
+        guard components.count >= 2 else { return "" }
+        _ = components[0].lowercased()
         let city = components[1].lowercased()
 
         let cityMap: [String: String] = [
-            // Explicit mappings
+            // Asia
             "hong_kong": "hk",
             "macau": "mo",
             "macao": "mo",
@@ -26,7 +26,7 @@ struct TimezoneUtils {
             "ho_chi_minh": "vn",
             "saigon": "vn",
             "bangkok": "th",
-            "jakarta": "id",
+            
             "manila": "ph",
             "kuala_lumpur": "my",
             "dubai": "ae",
@@ -50,13 +50,26 @@ struct TimezoneUtils {
             "bishkek": "kg",
             "phnom_penh": "kh",
             "vientiane": "la",
+            "beijing": "cn", "new_delhi": "in", "mumbai": "in", "islamabad": "pk",
+            "kabul": "af", "kathmandu": "np", "thimphu": "bt", "colombo": "lk",
+            "male": "mv", "muscat": "om", "doha": "qa", "kuwait": "kw",
+            "manama": "bh", "abu_dhabi": "ae", "sanaa": "ye", "aden": "ye",
+            "tbilisi": "ge", "yerevan": "am", "ashgabat": "tm", "dushanbe": "tj",
+            "astana": "kz", "nur-sultan": "kz", "ulaanbaatar": "mn", "pyongyang": "kp",
+            "bandar_seri_begawan": "bn", "dili": "tl", "jakarta": "id",
 
             // North America
             "toronto": "ca", "vancouver": "ca", "montreal": "ca", "halifax": "ca",
-            "winnipeg": "ca", "edmonton": "ca", "calgary": "ca",
+            "winnipeg": "ca", "edmonton": "ca", "calgary": "ca", "ottawa": "ca",
+            "washington": "us", "new_york": "us", "los_angeles": "us", "chicago": "us",
 
-            // Mexico
+            // Mexico & Central America & Caribbean
             "mexico_city": "mx", "tijuana": "mx", "monterrey": "mx", "chihuahua": "mx", "mazatlan": "mx",
+            "guatemala": "gt", "belize": "bz", "san_salvador": "sv", "tegucigalpa": "hn",
+            "managua": "ni", "san_jose": "cr", "panama": "pa", "havana": "cu",
+            "kingston": "jm", "port-au-prince": "ht", "santo_domingo": "do", "san_juan": "pr",
+            "bridgetown": "bb", "port_of_spain": "tt", "st_georges": "gd", "roseau": "dm",
+            "castries": "lc", "kingstown": "vc", "st_johns": "ag", "basseterre": "kn",
 
             // South America
             "buenos_aires": "ar", "cordoba": "ar", "mendoza": "ar", "catamarca": "ar",
@@ -74,40 +87,47 @@ struct TimezoneUtils {
 
             // Africa
             "cairo": "eg", "johannesburg": "za", "nairobi": "ke", "lagos": "ng",
-            "casablanca": "ma", "accra": "gh", "addis_ababa": "et",
+            "casablanca": "ma", "accra": "gh", "addis_ababa": "et", "tripoli": "ly",
+            "tunis": "tn", "algiers": "dz", "khartoum": "sd", "juba": "ss",
+            "mogadishu": "so", "djibouti": "dj", "asmara": "er", "kampala": "ug",
+            "kigali": "rw", "bujumbura": "bi", "dar_es_salaam": "tz", "dodoma": "tz",
+            "lusaka": "zm", "harare": "zw", "gaborone": "bw", "maseru": "ls",
+            "mbabane": "sz", "maputo": "mz", "antananarivo": "mg", "moroni": "km",
+            "victoria": "sc", "port_louis": "mu", "windhoek": "na", "luanda": "ao",
+            "kinshasa": "cd", "brazzaville": "cg", "bangui": "cf", "ndjamena": "td",
+            "libreville": "ga", "malabo": "gq", "sao_tome": "st", "praia": "cv",
+            "bissau": "gw", "conakry": "gn", "freetown": "sl", "monrovia": "lr",
+            "abidjan": "ci", "yamoussoukro": "ci", "bamako": "ml", "ouagadougou": "bf",
+            "niamey": "ne", "porto-novo": "bj", "lome": "tg", "nouakchott": "mr",
+            "dakar": "sn", "banjul": "gm",
 
             // Europe
             "london": "gb", "paris": "fr", "berlin": "de", "rome": "it",
             "madrid": "es", "amsterdam": "nl", "brussels": "be", "vienna": "at",
-            "moscow": "ru", "kyiv": "ua", "kiev": "ua",
+            "moscow": "ru", "kyiv": "ua", "kiev": "ua", "athens": "gr", "lisbon": "pt",
+            "dublin": "ie", "copenhagen": "dk", "stockholm": "se", "oslo": "no",
+            "helsinki": "fi", "warsaw": "pl", "prague": "cz", "budapest": "hu",
+            "bucharest": "ro", "sofia": "bg", "zagreb": "hr", "ljubljana": "si",
+            "bratislava": "sk", "vilnius": "lt", "riga": "lv", "tallinn": "ee",
+            "minsk": "by", "chisinau": "md", "belgrade": "rs", "sarajevo": "ba",
+            "skopje": "mk", "podgorica": "me", "tirane": "al", "valletta": "mt",
+            "nicosia": "cy", "reykjavik": "is", "luxembourg": "lu", "monaco": "mc",
+            "andorra": "ad", "san_marino": "sm", "vatican": "va", "zurich": "ch",
 
-            // Pacific
-            "auckland": "nz", "guam": "gu", "fiji": "fj", "apiai": "ws"
+            // Pacific & Oceania
+            "auckland": "nz", "guam": "gu", "fiji": "fj", "apiai": "ws", "kiritimati": "ki",
+            "wellington": "nz", "sydney": "au", "melbourne": "au", "canberra": "au",
+            "suva": "fj", "nuku_alofa": "to", "apia": "ws", "port_vila": "vu",
+            "honiara": "sb", "port_moresby": "pg", "funafuti": "tv", "tarawa": "ki",
+            "majuro": "mh", "palikir": "fm", "ngerulmud": "pw", "yaren": "nr"
         ]
 
         if let explicitCode = cityMap[city] {
             return explicitCode
         }
 
-        // Region-based default fallback
-        switch region {
-        case "america":
-            return "us"
-        case "asia":
-            return ""  // intentionally left blank, avoids incorrect assumption
-        case "europe":
-            return "eu"
-        case "africa":
-            return "za"
-        case "australia":
-            return "au"
-        case "pacific":
-            return ""
-        case "atlantic":
-            return "gb"
-        default:
-            return "us"
-        }
+        // No fallback flags - return empty string if no explicit mapping exists
+        return ""
     }
 
     
@@ -138,9 +158,10 @@ struct TimezoneUtils {
     
     static func flagImage(for timezoneID: String) -> NSImage {
         let countryCode = countryCode(for: timezoneID).lowercased()
-        if let image = NSImage(named: countryCode) {
+        // Only try to load image if we have a valid country code
+        if !countryCode.isEmpty, let image = NSImage(named: countryCode) {
             return image
         }
-        return NSImage() // Return empty image if not found
+        return NSImage() // Return empty image if no country code or image not found
     }
 } 
