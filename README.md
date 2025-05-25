@@ -7,7 +7,13 @@
 
 
 
-MultiTimeInMenuBar allows you to add clocks of your favorite cities across the world in your menu bar, along with the country flag. This is a free to use, lightweight macOS application- from my MacBook I see roughly ~38 MB of memory usage.
+MultiTimeInMenuBar for macOS, a lightweight app to display multiple timezones with their country flags in the menu bar.
+
+## Features
+
+- Display multiple timezone clocks in your menu bar
+- Add a prefix in addition to a flag
+- Display seconds, time in 24 hour format, and day difference.
 
 ## Download
 
@@ -22,20 +28,7 @@ Download the latest version from the [Releases page](https://github.com/rshin7/M
 ### Requirements
 - macOS 15.4 or later
 
-## Development
 
-This project uses GitHub Actions for automated building, signing, and distribution. See [GITHUB_ACTIONS_SETUP.md](GITHUB_ACTIONS_SETUP.md) for setup instructions.
-
-### Building Locally
-```bash
-xcodebuild -project MultiTimeInMenuBar.xcodeproj -scheme MultiTimeInMenuBar -configuration Release build
-```
-
-## Features
-
-- Display multiple timezone clocks in your menu bar
-- Easy city selection and timezone management
-- Lightweight and efficient menu bar app
 
 ## Known Limitations
 macOS will hide items in the menu bar if you run out of screen space. If you lose your clock, you can find it back by temporarily removing some items from your Control Center menu bar by going to Settings > Control Center and setting temporarily setting some items to "Don't Show in Menu Bar". Then you can pick and choose what's important to you.
