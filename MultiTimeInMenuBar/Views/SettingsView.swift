@@ -146,6 +146,7 @@ class TimezoneManager: ObservableObject {
 
 struct SettingsView: View {
     @StateObject private var timezoneManager = TimezoneManager.shared
+    @StateObject private var launchAtLoginManager = LaunchAtLoginManager.shared
     @AppStorage("use24Hour") private var use24Hour: Bool = false
     @AppStorage("showSeconds") private var showSeconds: Bool = true
     @AppStorage("showFlags") private var showFlags: Bool = true
@@ -182,7 +183,7 @@ struct SettingsView: View {
                         .font(.title2)
                         .bold()
 
-                    Text("v1.0.2")
+                    Text("v1.0.3")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -191,12 +192,20 @@ struct SettingsView: View {
             .padding(.top)
 
                 // Display Settings Section
-                GroupBox("Display Settings") {
+                GroupBox("Settings") {
                 VStack(alignment: .leading, spacing: 12) {
                     Toggle("Use 24-hour format", isOn: $use24Hour)
                     Toggle("Show seconds", isOn: $showSeconds)
                     Toggle("Show flags", isOn: $showFlags)
                     Toggle("Show day difference", isOn: $showDayDiff)
+                    
+                    Toggle("Launch at login", isOn: .init(
+                        get: { launchAtLoginManager.isEnabled },
+                        set: { newValue in
+                            launchAtLoginManager.setEnabled(newValue)
+                        }
+                    ))
+                    .help("Automatically start MultiTimeInMenuBar when you log in to your Mac")
                 }
                 .padding(.vertical, 4)
             }
